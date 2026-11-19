@@ -37,8 +37,8 @@ Ensure you have the following installed:
 ### Step 2: Clone the Repository
 Open a terminal (Command Prompt, PowerShell, or Bash) and clone the repository:
 ```bash
-git clone https://github.com/ashu999gold-dot/ME_206_Humanoid_robot.git
-cd ME_206_Humanoid_robot
+git clone https://github.com/ashu999gold-dot/humanoid_robot.git
+cd humanoid_robot
 ```
 
 ### Step 3: Set Up Python Environment
@@ -149,7 +149,7 @@ z(t) &= 0.8691 + 1.1012 (t - 2.280) - 4.905 (t - 2.280)^2
 ## 6. Project Structure
 
 ```text
-ME_206_Humanoid_robot/
+humanoid_robot/
 ├── RUN.bat                                     <-- Double-click to run on Windows
 ├── controller.py                               <-- Main robot controller & MuJoCo simulation
 ├── main_scene.xml                              <-- MuJoCo scene with lighting, pedestal & apple
@@ -197,7 +197,7 @@ pip install mujoco numpy
 ### Issue: Robot meshes not loading or missing STL error
 **Solution:** Run the script from the project root directory so relative asset paths resolve correctly:
 ```bash
-cd /path/to/ME_206_Humanoid_robot
+cd /path/to/humanoid_robot
 python controller.py
 ```
 

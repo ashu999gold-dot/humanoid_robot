@@ -70,7 +70,7 @@ KEY MULTIBODY & PROJECTILE DYNAMICS:
 --------------------------------------------------------------------------------
 REPRODUCING THE SIMULATION:
 The entire simulation is 100% reproducible:
-1. Clone / open the ME_206_Humanoid_robot repository.
+1. Clone / open the humanoid_robot repository.
 2. Double-click RUN.bat or run:
    python controller.py
    python controller.py --headless
