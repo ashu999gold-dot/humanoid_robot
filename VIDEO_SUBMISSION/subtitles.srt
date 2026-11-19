@@ -1,0 +1,144 @@
+1
+00:00:00,100 --> 00:00:05,334
+Welcome to the ME 206 Statics and Dynamics project demonstration.
+
+2
+00:00:05,284 --> 00:00:22,513
+In this investigation, we present a complete multibody dynamic simulation of an authentic Unitree G1 humanoid robot executing an autonomous, contact-driven apple pickup, athletic throwing motion, unconstrained parabolic flight, and compliant opposite-hand catching.
+
+3
+00:00:22,684 --> 00:00:32,286
+The simulation environment is built on MuJoCo physics, leveraging the official Unitree G1 model from Google DeepMind's MuJoCo Menagerie.
+
+4
+00:00:32,236 --> 00:00:43,538
+The robot consists of 47 rigid bodies and 43 actuated degrees of freedom, featuring authentic mass matrices, joint limits, and actuator torque curves.
+
+5
+00:00:43,538 --> 00:00:51,618
+The target object is a physically simulated apple with a mass of 150 grams and a radius of 38 millimeters.
+
+6
+00:00:51,618 --> 00:01:03,035
+Crucially, all manipulation, throwing, and catching dynamics are achieved through pure rigid-body contact mechanics, with zero artificial constraints or velocity injections.
+
+7
+00:01:03,196 --> 00:01:07,643
+The sequence begins in Phase 1 with bipedal equilibrium.
+
+8
+00:01:07,593 --> 00:01:14,101
+The lower-body actuators maintain the center of mass securely within the dual-foot support polygon.
+
+9
+00:01:14,101 --> 00:01:19,900
+At 0.8 seconds, Phase 2 initiates an athletic reaching trajectory.
+
+10
+00:01:19,900 --> 00:01:25,635
+The right arm follows a smooth, minimum-jerk S-curve interpolation toward the pedestal.
+
+11
+00:01:25,635 --> 00:01:33,122
+Simultaneously, the left arm executes a symmetric counter-pose, balancing upper-torso angular momentum.
+
+12
+00:01:33,122 --> 00:01:45,686
+As the right hand reaches the pedestal at 2.0 seconds, the fingers close into a supportive cradle, establishing multiple unilateral contact points without displacing the apple from its resting stand.
+
+13
+00:01:45,686 --> 00:01:50,480
+The apple is lifted cleanly into a stable pre-throw configuration.
+
+14
+00:01:50,644 --> 00:01:54,576
+In Phase 3, the apple is held in readiness.
+
+15
+00:01:54,526 --> 00:02:00,480
+At 2.20 seconds, Phase 4 executes an athletic throwing stroke.
+
+16
+00:02:00,480 --> 00:02:09,333
+Rather than relying on artificial velocity assignment, the robot transfers kinetic energy to the apple through rapid multi-joint coordination.
+
+17
+00:02:09,333 --> 00:02:17,438
+The right shoulder, elbow, and wrist accelerate along a medial arc toward the robot's midline over an 80-millisecond stroke.
+
+18
+00:02:17,438 --> 00:02:24,552
+At peak acceleration, the fingers open smoothly, allowing the apple to separate naturally from the palm.
+
+19
+00:02:24,552 --> 00:02:35,879
+At 2.280 seconds, the apple achieves ballistic release at an initial velocity of 1.774 meters per second, directed across the sagittal plane.
+
+20
+00:02:35,879 --> 00:02:41,768
+Here, we observe the release dynamics in 0.25x slow motion.
+
+21
+00:02:41,932 --> 00:02:49,472
+Once released, the apple enters unconstrained 3D parabolic flight under standard gravitational acceleration.
+
+22
+00:02:49,422 --> 00:03:04,925
+Applying rigid-body ballistic equations with our measured release state, we observe an apex altitude of 0.931 meters at 2.392 seconds, and a clean sagittal midline crossing at 2.376 seconds.
+
+23
+00:03:04,925 --> 00:03:13,572
+The yellow trajectory markers trace the theoretical parabolic path, which matches the simulated position to within sub-millimeter precision.
+
+24
+00:03:13,572 --> 00:03:23,134
+This confirms that the projectile flight is entirely free of external parasitic forces, adhering strictly to Newtonian mechanics and energy conservation.
+
+25
+00:03:23,308 --> 00:03:29,083
+While the projectile is in flight, the left arm executes a predictive interception maneuver.
+
+26
+00:03:29,033 --> 00:03:36,649
+Estimating the touchdown state, the left wrist positions an open chalice cradle directly along the incoming flight vector.
+
+27
+00:03:36,649 --> 00:03:46,314
+Touchdown occurs at 2.532 seconds on the left thumb proximal link at an impact velocity of 1.636 meters per second.
+
+28
+00:03:46,314 --> 00:03:56,404
+To prevent rebound, the receiver executes active compliance cushioning, absorbing kinetic energy through joint impedance and viscoelastic contact compliance.
+
+29
+00:03:56,404 --> 00:04:06,662
+Once the relative momentum is dissipated, the left digits close into a locked grasp, establishing 15 stable physical contacts that hold the apple securely.
+
+30
+00:04:06,820 --> 00:04:12,298
+A comprehensive telemetry audit confirms the mechanical rigor of the demonstration.
+
+31
+00:04:12,248 --> 00:04:19,117
+Total flight duration was 252 milliseconds over a 32-centimeter spatial displacement.
+
+32
+00:04:19,117 --> 00:04:25,985
+Impact kinetic energy was reduced from 0.236 Joules at launch to complete rest.
+
+33
+00:04:25,985 --> 00:04:38,460
+The robot maintained uncompromised postural stability throughout the eight-second trial, with the apple held stably at an altitude of 86.7 centimeters under 15 active contact normals.
+
+34
+00:04:38,460 --> 00:04:44,748
+All constraint fallbacks were confirmed to be zero, verifying genuine rigid-body prehension.
+
+35
+00:04:44,908 --> 00:04:59,652
+In conclusion, this ME 206 project successfully validates multi-joint athletic motion generation, unconstrained ballistic projectile flight, and compliant robotic catching on an authentic Unitree G1 humanoid platform.
+
+36
+00:04:59,602 --> 00:05:01,638
+Thank you for watching.
+

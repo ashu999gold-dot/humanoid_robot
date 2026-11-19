@@ -1,0 +1,7 @@
+# ME 206 Unitree G1 Humanoid Simulation Requirements
+mujoco>=3.1.0
+numpy>=1.24.0
+
+# Optional dependencies for video re-rendering & audio synthesis
+# pillow>=10.0.0
+# edge-tts>=7.0.0

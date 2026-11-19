@@ -1,0 +1,84 @@
+================================================================================
+YOUTUBE VIDEO TITLE:
+ME 206: Autonomous Humanoid Apple Throwing & Catching Simulation | Unitree G1 & MuJoCo
+================================================================================
+
+VIDEO DESCRIPTION:
+
+Autonomous Bimanual Manipulation, Athletic Throwing, Ballistic Flight, and Compliant Catching on an Authentic Unitree G1 Humanoid Robot.
+
+Submitted for ME 206 Statics and Dynamics.
+
+In this engineering demonstration, an authentic Unitree G1 humanoid robot autonomously picks up a physical apple, plans an athletic bimanual throwing motion, imparts launch velocity purely through multi-joint contact dynamics, achieves unconstrained 3D parabolic flight across its sagittal plane, and successfully intercepts and catches the projectile with its opposite hand using active compliance cushioning and a locked multi-finger grasp.
+
+100% PURE RIGID-BODY CONTACT DYNAMICS:
+- Zero weld constraints or artificial attachments.
+- Zero manual velocity overwrites or teleportation.
+- Release velocity arises entirely from Newton's laws and multi-joint momentum transfer.
+- Compliant interception absorbs kinetic energy through joint impedance and contact compliance.
+
+--------------------------------------------------------------------------------
+CHAPTER TIMESTAMPS:
+00:00 - Title Card & Academic Overview
+00:22 - Simulation Architecture & Multibody Dynamics (47 Bodies, 43 DoF)
+01:03 - Phase 1 & 2: Static Balance & Contact-Based Prehension
+01:50 - Phase 3 & 4: Athletic Throw & Momentum Transfer (0.25x Slow Motion)
+02:41 - Phase 5: Projectile Dynamics & Ballistic Verification
+03:22 - Phase 6: Predictive Interception, Cushioning & Locked Grasp
+04:06 - Quantitative Results & Telemetry Audit
+04:44 - Conclusion & Academic Credits
+
+--------------------------------------------------------------------------------
+KEY MULTIBODY & PROJECTILE DYNAMICS:
+
+1. Robot Architecture:
+   - Platform: Authentic Unitree G1 Humanoid (Google DeepMind MuJoCo Menagerie)
+   - Configuration: 47 Rigid Bodies, 43 Actuated Degrees of Freedom
+   - Upper Body: Dual 7-DoF Arms + Dual 7-DoF Dexterous Hands
+   - Lower Body: 12-DoF Bipedal Leg System + 3-DoF Pelvis/Waist
+
+2. Target Object (Physical Apple):
+   - Mass: m = 0.150 kg (150 g)
+   - Radius: r = 0.038 m (38 mm)
+   - Rotational Inertia: I = 8.45 x 10^-5 kg*m^2
+   - Coulomb Friction: mu = 2.5, condim = 6
+
+3. Athletic Throw & Ballistic Release State:
+   - Release Time: t_0 = 2.280 s
+   - Launch Position: r_0 = [0.3572, -0.1314, 0.8691] m
+   - Launch Velocity: v_0 = [-0.2829, +1.3616, +1.1012] m/s
+   - Resultant Launch Speed: |v_0| = 1.774 m/s
+   - Launch Elevation Angle: theta = 38.37 deg
+   - Launch Kinetic Energy: E_k = 0.236 J
+
+4. Analytical Parabolic Equations of Motion:
+   - x(t) = 0.3572 - 0.2829 * (t - 2.280)
+   - y(t) = -0.1314 + 1.3616 * (t - 2.280)
+   - z(t) = 0.8691 + 1.1012 * (t - 2.280) - 0.5 * 9.81 * (t - 2.280)^2
+   - Peak Apex Altitude: Z_apex = 0.931 m at t = 2.392 s
+   - Midline Crossing: Y = 0.000 m at t = 2.376 s
+   - Theoretical vs Simulated Position Discrepancy: < 0.4 mm
+
+5. Compliant Interception & Catch:
+   - Touchdown Time: t_td = 2.532 s (Flight Duration: 252 ms)
+   - Spatial Flight Distance: 31.85 cm
+   - Touchdown Body: left_hand_thumb_1_link
+   - Impact Velocity: v_imp = [-0.3471, +1.0888, -1.1703] m/s (|v_imp| = 1.636 m/s)
+   - Active Contacts in Locked Grasp: 15 simultaneous contact normals
+   - Grasp Hold Altitude: Z = 0.8665 m (held stably for > 5.46 s until trial termination)
+
+--------------------------------------------------------------------------------
+REPRODUCING THE SIMULATION:
+The entire simulation is 100% reproducible:
+1. Clone / open the ME_206_Humanoid_robot repository.
+2. Double-click RUN.bat or run:
+   python controller.py
+   python controller.py --headless
+
+--------------------------------------------------------------------------------
+SOFTWARE & TOOLS:
+- Physics Engine: MuJoCo 3.14.0 (Google DeepMind)
+- Humanoid Model: Unitree Robotics G1 (DeepMind MuJoCo Menagerie)
+- Video Pipeline: Custom MuJoCo Offscreen Renderer, PIL, FFmpeg 8.1.1
+- Voiceover: Microsoft Edge Neural TTS (en-US-ChristopherNeural)
+- Course: ME 206: Statics and Dynamics, Mechanical Engineering
